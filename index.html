@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Перелёт Земля — Луна</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game">
+    <h1>Перелёт Земля — Луна</h1>
 
+    <div class="canvas-wrap">
+      <canvas id="game" width="800" height="400"></canvas>
+    </div>
+
+    <div class="controls">
+      <div class="control-row">
+        <label for="power">Сила импульса: <span id="powerVal">50</span>%</label>
+        <input type="range" id="power" min="0" max="100" value="50" step="1" inputmode="none">
+      </div>
+
+      <div class="control-row">
+        <label for="angle">Угол: <span id="angleVal">0</span>°</label>
+        <input type="range" id="angle" min="-60" max="60" value="0" step="1" inputmode="none">
+      </div>
+
+      <div class="buttons">
+        <button id="launchBtn" class="primary" type="button">Запуск</button>
+        <button id="resetBtn" class="secondary" type="button" hidden>Заново</button>
+      </div>
+    </div>
+
+    <div class="hud">
+      <div class="hud-item">
+        <span class="hud-label">Время</span>
+        <span id="hudTime">0.0 с</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">Скорость</span>
+        <span id="hudSpeed">0.00 км/с</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">ΔV</span>
+        <span id="hudDv">0.00 км/с</span>
+      </div>
+    </div>
+
+    <div id="message" class="message" aria-live="polite"></div>
+
+    <div class="hint">
+      🖱️ Стрелки ← → — угол, ↑ ↓ — сила, Enter — запуск. 📱 На телефоне — ползунки пальцем.
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
